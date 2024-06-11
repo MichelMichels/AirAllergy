@@ -47,4 +47,16 @@ public class AirAllergySharpClientTests
         // Assert
         Assert.IsTrue(results.Count != 0);
     }
+    [TestMethod]
+    public async Task GetStationReadingTest()
+    {
+        // Arrange 
+        AirAllergySharpClient airAllergySharpClient = new(baseUrl);
+
+        // Act
+        List<Models.StationReading> results = await airAllergySharpClient.GetStationReadings();
+
+        // Assert
+        Assert.IsTrue(results.Count != 0);
+    }
 }
