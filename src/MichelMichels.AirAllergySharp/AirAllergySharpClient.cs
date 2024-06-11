@@ -1,4 +1,4 @@
-﻿namespace MichelMichels.AirAllergyAPI;
+﻿namespace MichelMichels.AirAllergySharp;
 
 public class AirAllergySharpClient(string baseUrl)
 {
