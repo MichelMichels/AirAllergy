@@ -7,5 +7,5 @@ public interface IAirAllergySharpClient
     Task<List<Permission>> GetPermissions();
     Task<List<Station>> GetStations();
     Task<List<Allergen>> GetAllergens();
-    Task<List<StationReading>> GetStationReadings();
+    Task<List<StationReading>> GetStationReadings(string? station, string? allergen);
 }

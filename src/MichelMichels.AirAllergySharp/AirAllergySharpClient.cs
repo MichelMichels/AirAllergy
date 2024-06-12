@@ -36,11 +36,33 @@ public class AirAllergySharpClient(string baseUrl) : IAirAllergySharpClient
 
         return await ParseContent<List<Allergen>>(response);
     }
-    public async Task<List<StationReading>> GetStationReadings()
+    public async Task<List<StationReading>> GetStationReadings(string? station = null, string? allergen = null)
     {
         InitializeHttpClient();
 
         string requestUri = "Measure";
+
+        if (!string.IsNullOrEmpty(station) || !string.IsNullOrEmpty(allergen))
+        {
+            requestUri += "?";
+        }
+
+        if (!string.IsNullOrEmpty(station))
+        {
+            requestUri += $"station={station}";
+
+            if (!string.IsNullOrEmpty(allergen))
+            {
+                requestUri += "&";
+            }
+        }
+
+        if (!string.IsNullOrEmpty(allergen))
+        {
+            requestUri += $"allergen={allergen}";
+        }
+
+        Debug.WriteLine(requestUri);
         HttpResponseMessage response = await _httpClient!.GetAsync(requestUri);
 
         return await ParseContent<List<StationReading>>(response);

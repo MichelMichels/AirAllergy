@@ -59,4 +59,20 @@ public class AirAllergySharpClientTests
         // Assert
         Assert.IsTrue(results.Count != 0);
     }
+    [TestMethod]
+    [DataRow(null, null)]
+    [DataRow("BEBRUS", null)]
+    [DataRow("BEBRUS", "POAC")]
+    [DataRow(null, "POAC")]
+    public async Task GetSpecificStationReadingTest(string? station, string? allergen)
+    {
+        // Arrange 
+        AirAllergySharpClient airAllergySharpClient = new(baseUrl);
+
+        // Act
+        List<Models.StationReading> results = await airAllergySharpClient.GetStationReadings(station, allergen);
+
+        // Assert
+        Assert.IsTrue(results.Count != 0);
+    }
 }
