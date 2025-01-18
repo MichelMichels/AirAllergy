@@ -1,9 +1,11 @@
+using MichelMichels.AirAllergySharp.Models;
+
 namespace MichelMichels.AirAllergySharp.Tests;
 
 [TestClass]
 public class AirAllergySharpClientTests
 {
-    private const string baseUrl = @"https://api-airallergy.sciensano.be/public/";
+    private AirAllergyOptions options = new();
 
     [TestMethod]
     public void BaseUrl_Null_ThrowsArgumentNullException()
@@ -15,7 +17,7 @@ public class AirAllergySharpClientTests
     public async Task GetPermissionsTest()
     {
         // Arrange 
-        AirAllergySharpClient airAllergySharpClient = new(baseUrl);
+        AirAllergySharpClient airAllergySharpClient = new(options);
 
         // Act
         List<Models.Permission> results = await airAllergySharpClient.GetPermissions();
@@ -27,7 +29,7 @@ public class AirAllergySharpClientTests
     public async Task GetStationsTest()
     {
         // Arrange 
-        AirAllergySharpClient airAllergySharpClient = new(baseUrl);
+        AirAllergySharpClient airAllergySharpClient = new(options);
 
         // Act
         List<Models.Station> results = await airAllergySharpClient.GetStations();
@@ -39,7 +41,7 @@ public class AirAllergySharpClientTests
     public async Task GetAllergensTest()
     {
         // Arrange 
-        AirAllergySharpClient airAllergySharpClient = new(baseUrl);
+        AirAllergySharpClient airAllergySharpClient = new(options);
 
         // Act
         List<Models.Allergen> results = await airAllergySharpClient.GetAllergens();
@@ -51,7 +53,7 @@ public class AirAllergySharpClientTests
     public async Task GetStationReadingTest()
     {
         // Arrange 
-        AirAllergySharpClient airAllergySharpClient = new(baseUrl);
+        AirAllergySharpClient airAllergySharpClient = new(options);
 
         // Act
         List<Models.StationReading> results = await airAllergySharpClient.GetStationReadings();
@@ -67,7 +69,7 @@ public class AirAllergySharpClientTests
     public async Task GetSpecificStationReadingTest(string? station, string? allergen)
     {
         // Arrange 
-        AirAllergySharpClient airAllergySharpClient = new(baseUrl);
+        AirAllergySharpClient airAllergySharpClient = new(options);
 
         // Act
         List<Models.StationReading> results = await airAllergySharpClient.GetStationReadings(station, allergen);

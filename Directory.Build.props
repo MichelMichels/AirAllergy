@@ -1,0 +1,9 @@
+<Project>
+  <PropertyGroup>
+    <AirAllergyVersion>1.0.0</AirAllergyVersion>
+    <Version>$(AirAllergyVersion)</Version>
+    <FileVersion>$(AirAllergyVersion)</FileVersion>
+    <InformationalVersion>$(AirAllergyVersion)</InformationalVersion>
+    <Authors>Michel Michels</Authors>
+  </PropertyGroup>
+</Project>

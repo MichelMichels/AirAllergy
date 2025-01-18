@@ -4,9 +4,9 @@ using System.Net.Http.Json;
 
 namespace MichelMichels.AirAllergySharp;
 
-public class AirAllergySharpClient(string baseUrl) : IAirAllergySharpClient
+public class AirAllergySharpClient(AirAllergyOptions options) : IAirAllergySharpClient
 {
-    private readonly string _baseUrl = baseUrl ?? throw new ArgumentNullException(nameof(baseUrl));
+    private readonly AirAllergyOptions _options = options ?? throw new ArgumentNullException(nameof(options));
 
     private HttpClient? _httpClient;
 
@@ -72,7 +72,7 @@ public class AirAllergySharpClient(string baseUrl) : IAirAllergySharpClient
     {
         _httpClient ??= new HttpClient()
         {
-            BaseAddress = new Uri(_baseUrl),
+            BaseAddress = new Uri(_options.BaseUrl),
         };
     }
     private static async Task<T> ParseContent<T>(HttpResponseMessage message) where T : class
