@@ -25,20 +25,14 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 8.0.x
-
-      - name: Restore dependencies
+      - name: Install dependencies
         run: dotnet restore
-
-      - name: Build
-        run: dotnet build
-
-      - name: Test
-        run: dotnet test --logger:trx
-
-      - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v2
-        if: always()
+      - name: Test with dotnet
+        run: dotnet test --logger trx --results-directory "TestResults"
+      - name: Upload dotnet test results
+        uses: actions/upload-artifact@v4
         with:
-          files: |
-            /home/runner/work/AirAllergy/AirAllergy/tests/MichelMichels.AirAllergySharp.Tests/TestResults/*.trx
-            /home/runner/work/AirAllergy/AirAllergy/tests/MichelMichels.AirAllergySharp.Models.Tests/TestResults/*.trx
+          name: dotnet-results
+          path: TestResults
+        # Use always() to always run this step to publish test results when there are test failures
+        if: ${{ always() }}
