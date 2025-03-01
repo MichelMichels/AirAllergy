@@ -40,4 +40,5 @@ jobs:
         if: always()
         with:
           files: |
-            /home/runner/work/AirAllergy/AirAllergy/src/MichelMichels.AirAllergySharpTests/TestResults/*.trx
+            /home/runner/work/AirAllergy/AirAllergy/tests/MichelMichels.AirAllergySharp.Tests/TestResults/*.trx
+            /home/runner/work/AirAllergy/AirAllergy/tests/MichelMichels.AirAllergySharp.Models.Tests/TestResults/*.trx
