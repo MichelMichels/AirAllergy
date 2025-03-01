@@ -13,6 +13,9 @@
     </PackageReleaseNotes>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="..\..\README.md" Pack="true" PackagePath=""/>
+    <None Include="..\..\README.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MichelMichels.AirAllergySharp.Models\MichelMichels.AirAllergySharp.Models.csproj" />
   </ItemGroup>
 </Project>
