@@ -9,7 +9,7 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageReleaseNotes>
-      * Initial release v1.0.0
+      * Initial release v1.1.0
     </PackageReleaseNotes>
   </PropertyGroup>
   <ItemGroup>
