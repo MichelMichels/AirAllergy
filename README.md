@@ -1,7 +1,7 @@
 <!-- omit in toc -->
 # 🌿 AirAllergySharp  
 
-[![NuGet Version](https://img.shields.io/nuget/v/MichelMichels.AirAllergy)](https://www.nuget.org/packages/MichelMichels.AirAllergy)
+[![NuGet Version](https://img.shields.io/nuget/v/MichelMichels.AirAllergySharp)](https://www.nuget.org/packages/MichelMichels.AirAllergySharp)
 [![.NET](https://github.com/MichelMichels/AirAllergy/actions/workflows/dotnet.yml/badge.svg)](https://github.com/MichelMichels/AirAllergy/actions/workflows/dotnet.yml)
 
 This projects is a C# wrapper library to retrieve pollen measurements in Belgium from [Sciensano](https://airallergy.sciensano.be/) through their API.
