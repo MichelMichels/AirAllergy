@@ -14,8 +14,8 @@ public class PermissionTests
         // Act
 
         // Assert
-        Assert.IsNotNull(model.Allergen);
-        Assert.IsNotNull(model.Station);
-        Assert.IsNotNull(model.Feature);
+        Assert.AreEqual(string.Empty, model.Allergen);
+        Assert.AreEqual(string.Empty, model.Station);
+        Assert.AreEqual(string.Empty, model.Feature);
     }
 }
